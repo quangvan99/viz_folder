@@ -25,6 +25,25 @@ SERVE_DIR=/path/to/your/folder
 | `./scripts/log.sh` | View logs |
 | `./scripts/log.sh -f` | Follow logs |
 
+## Statistics Data
+
+Edit `static/statistics_bar_charts.json` to customize dashboard charts:
+
+```json
+{
+  "chart_name": {
+    "title": "Chart Title",
+    "x_axis": ["Label1", "Label2", "Label3"],
+    "values": [100, 200, 150]
+  }
+}
+```
+
+- `chart_name`: unique identifier for the chart
+- `title`: display title
+- `x_axis`: array of labels
+- `values`: array of numbers (must match x_axis length)
+
 ## Structure
 
 ```
