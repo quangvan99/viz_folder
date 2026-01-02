@@ -1,0 +1,31 @@
+# FolderTree - Development Docker Compose
+# Usage: docker compose -f docker/docker-compose.dev.yml up -d
+
+services:
+  foldertree-dev:
+    container_name: foldertree-dev
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8091:8000"
+    volumes:
+      # Mount source code for hot reload
+      - ../server.py:/app/server.py:ro
+      - ../static:/app/static:ro
+      - ../docs:/app/docs:ro
+      # Mount the directory you want to browse (from .env)
+      - ${SERVE_DIR}:/data:ro
+    environment:
+      - PORT=8000
+      - SERVE_DIR=/data
+      - DEBUG=1
+    env_file:
+      - ../.env
+    restart: unless-stopped
+    networks:
+      - foldertree-network-dev
+
+networks:
+  foldertree-network-dev:
+    name: foldertree-network-dev

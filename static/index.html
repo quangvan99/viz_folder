@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Analytics</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>📊 Visual Analytics</h1>
+        <div class="header-actions">
+            <button id="theme-toggle" title="Toggle theme">🌙</button>
+            <button id="refresh-btn" title="Refresh">🔄</button>
+        </div>
+    </header>
+
+    <nav class="nav-tabs">
+        <a href="#dashboard" class="nav-tab" data-page="dashboard">📊 Dashboard</a>
+        <a href="#files" class="nav-tab active" data-page="files">📂 Files</a>
+    </nav>
+
+    <!-- Dashboard Page -->
+    <div id="page-dashboard" class="page" hidden>
+        <div class="dashboard-container" id="dashboard">
+            <div class="dashboard-grid">
+                <!-- KPI Top Bar -->
+                <div class="kpi-bar" id="kpi-bar">
+                    <!-- Populated by JS -->
+                </div>
+
+                <!-- Weapon Classification (7 columns, 2 rows) -->
+                <div class="dashboard-card glass-card weapon-card" id="weapon-card">
+                    <div class="dashboard-card-title">Weapon Classification</div>
+                    <div class="card-content" id="weapon-chart">
+                        <div class="dashboard-loading">Loading...</div>
+                    </div>
+                </div>
+
+                <!-- Fight Detection (5 columns, 1 row) -->
+                <div class="dashboard-card glass-card fight-card" id="fight-card">
+                    <div class="dashboard-card-title">Fight Detection</div>
+                    <div class="card-content" id="fight-chart">
+                        <div class="dashboard-loading">Loading...</div>
+                    </div>
+                </div>
+
+                <!-- Crown Abnormal (5 columns, 1 row) -->
+                <div class="dashboard-card glass-card crown-card" id="crown-card">
+                    <div class="dashboard-card-title">Crown Abnormal</div>
+                    <div class="card-content" id="crown-chart">
+                        <div class="dashboard-loading">Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Files Page (existing content) -->
+    <div id="page-files" class="page">
+        <div class="breadcrumb" id="breadcrumb">
+            <span class="path">/</span>
+        </div>
+
+        <main class="container">
+            <aside class="tree-panel" id="tree-panel">
+                <ul class="tree" id="tree-root"></ul>
+            </aside>
+
+            <section class="preview-panel" id="preview-panel">
+                <div class="preview-placeholder">
+                    <div class="placeholder-icon">📄</div>
+                    <div class="placeholder-text">Select a file to preview</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="status-bar" id="status-bar">
+        Ready
+    </footer>
+
+    <script src="/static/app.js"></script>
+    <script src="/static/dashboard.js"></script>
+</body>
+</html>
