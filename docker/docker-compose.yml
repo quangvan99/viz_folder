@@ -1,22 +1,24 @@
-# FolderTree - Production Docker Compose
+# FolderTree - Docker Compose
 # Usage: docker compose -f docker/docker-compose.yml up -d
 
 services:
   foldertree:
-    container_name: foldertree-prod
+    container_name: foldertree
     build:
       context: ..
       dockerfile: docker/Dockerfile
     ports:
-      - "8092:8000"
+      - "8091:8000"
     volumes:
-      # Mount docs for stats API
-      - ../docs:/app/docs:ro
+      # Mount source code for hot reload
+      - ../server.py:/app/server.py:ro
+      - ../static:/app/static:ro
       # Mount the directory you want to browse (from .env)
       - ${SERVE_DIR}:/data:ro
     environment:
       - PORT=8000
       - SERVE_DIR=/data
+      - DEBUG=1
     env_file:
       - ../.env
     restart: unless-stopped

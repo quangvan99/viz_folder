@@ -1,12 +1,12 @@
 #!/bin/bash
-# FolderTree - Stop Production
+# FolderTree - Stop
 
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
-echo "🛑 Stopping FolderTree (Production)"
+echo "Stopping FolderTree"
 
 cd "$PROJECT_DIR"
 
@@ -17,4 +17,4 @@ fi
 
 docker compose -f docker/docker-compose.yml down
 
-echo "✅ FolderTree stopped"
+echo "FolderTree stopped"

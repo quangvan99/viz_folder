@@ -1,5 +1,5 @@
 #!/bin/bash
-# FolderTree - View Production Logs
+# FolderTree - View Logs
 # Usage: ./scripts/log.sh [-f]
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

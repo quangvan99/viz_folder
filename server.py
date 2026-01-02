@@ -121,7 +121,7 @@ class FolderTreeHandler(SimpleHTTPRequestHandler):
 
     def handle_stats(self):
         """Return statistics data for dashboard charts."""
-        stats_path = os.path.join(APP_DIR, 'docs', 'statistics_bar_charts.json')
+        stats_path = os.path.join(APP_DIR, 'static', 'statistics_bar_charts.json')
 
         if not os.path.isfile(stats_path):
             self.send_error(404, "Statistics file not found")

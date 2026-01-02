@@ -1,0 +1,43 @@
+{
+  "fight_detection": {
+    "title": "Fight Detection Statistics",
+    "x_axis": [
+      "Fight",
+      "No Fight"
+    ],
+    "values": [
+      120,
+      380
+    ]
+  },
+  "crown_abnormal": {
+    "title": "Crown Abnormal Statistics",
+    "x_axis": [
+      "Abnormal",
+      "Normal"
+    ],
+    "values": [
+      45,
+      455
+    ]
+  },
+  "weapon_classification": {
+    "title": "Weapon Classification Statistics",
+    "x_axis": [
+      "knife",
+      "gun",
+      "sword",
+      "dao",
+      "matau",
+      "con"
+    ],
+    "values": [
+      30,
+      12,
+      18,
+      40,
+      25,
+      10
+    ]
+  }
+}

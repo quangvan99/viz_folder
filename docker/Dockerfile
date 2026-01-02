@@ -3,10 +3,6 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# Copy application files
-COPY server.py .
-COPY static/ ./static/
-
 # Create data directory for mounting
 RUN mkdir -p /data
 
